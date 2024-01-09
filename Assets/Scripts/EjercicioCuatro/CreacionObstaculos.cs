@@ -21,9 +21,12 @@ public class CreacionObstaculos : MonoBehaviour
         {
             /* TODO: Lanzar un rayo, e instanciar un obstáculo en el punto donde se golpee */
             /* Hay que reconstruir la superficie, busca un método que se encargue de ello */
-            
-
+            Ray rayo = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(rayo, out hit))
+            {
+                Instantiate(obstaculo, hit.point, obstaculo.transform.localRotation);
+            }
         }
     }
-       
 }
