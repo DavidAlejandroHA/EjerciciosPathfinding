@@ -8,6 +8,7 @@ public class MovimientoPuntos : MonoBehaviour
     // Start is called before the first frame update
     public Vector3[] listaVectores;
     public NavMeshAgent agente;
+    int mascara = 1 << 6;
     //Transform destino;
     public int actual =0;
 
@@ -49,7 +50,22 @@ public class MovimientoPuntos : MonoBehaviour
             Debug.Log("actual despues " + actual);
             agente.destination = listaVectores[actual];
         }
-      
+
+        RaycastHit golpe;
+        Vector3 origen = transform.position;
+        Vector3 direccion = transform.forward;
+        if (Physics.Raycast(origen, direccion, out golpe, 3f, mascara))
+        {
+            //Debug.Log(golpe.collider.gameObject.name);
+            //Destroy(golpe.collider.gameObject);
+            Debug.Log("algo");
+            agente.destination = golpe.point;
+        }
+        else
+        {
+            //agente.destination = listaVectores[actual];
+        }
+
     }
 
     void OnDrawGizmos()

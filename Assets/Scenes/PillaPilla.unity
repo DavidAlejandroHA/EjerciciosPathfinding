@@ -479,9 +479,9 @@ GameObject:
   - component: {fileID: 701623231}
   - component: {fileID: 701623230}
   - component: {fileID: 701623229}
-  - component: {fileID: 701623228}
+  - component: {fileID: 701623233}
   m_Layer: 0
-  m_Name: Heroe
+  m_Name: Presa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -502,25 +502,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1753890658}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &701623228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 701623226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d9a21a0dc99fab48a16ee73e9b6feca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  listaVectores:
-  - {x: 6.604899, y: -5.770748, z: 1.655693}
-  - {x: 6.604899, y: -5.770748, z: 7.6}
-  - {x: 13.49, y: -5.770748, z: 7.6}
-  - {x: 13.49, y: -5.770748, z: 1.805}
-  agente: {fileID: 701623229}
-  actual: 0
 --- !u!195 &701623229
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -531,7 +512,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 1
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -616,6 +597,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701623226}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &701623233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701623226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7e6d0a8f311dd54e8a9d9d17bf67292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  depredador: {fileID: 1301516406}
 --- !u!1001 &1266244932
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -723,7 +717,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movX: 0
   movZ: 0
-  speed: 10
+  speed: 3
 --- !u!135 &1301516408
 SphereCollider:
   m_ObjectHideFlags: 0
