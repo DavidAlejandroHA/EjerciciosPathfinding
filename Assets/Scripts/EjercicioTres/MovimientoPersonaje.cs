@@ -28,16 +28,6 @@ public class MovimientoPersonaje : MonoBehaviour
         movX = Input.GetAxis("Horizontal");
         movZ = Input.GetAxis("Vertical");
 
-        // Si está intentando saltar y está en el suelo se pone saltando
-        // Raycast salto
-        if (Input.GetButton("Jump") /*Input.GetButtonDown*/)
-        {
-            if (estaEnSuelo)
-            {
-                quiereSaltar = true;
-            }
-        }
-
         // Detectar cuando el personaje está en el suelo usando el RaycastHit
         RaycastHit hit;
         Vector3 origen = transform.position;
@@ -56,6 +46,18 @@ public class MovimientoPersonaje : MonoBehaviour
 
     private void FixedUpdate()
     {
+
+        // Si está intentando saltar y está en el suelo se pone saltando
+        // Raycast salto
+        if (Input.GetButton("Jump") /*Input.GetButtonDown*/)
+        {
+            if (estaEnSuelo)
+            {
+                quiereSaltar = true;
+                Debug.Log(quiereSaltar);
+            }
+        }
+
         //Vector3 nuevaVelocidad = new Vector3(movX * speed, fisicas.velocity.y, movZ * speed);
         //fisicas.velocity = nuevaVelocidad;
 
